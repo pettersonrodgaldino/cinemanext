@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { useState} from 'react'
 import styles from '../styles/Home.module.css'
+import Link from 'next/link'
 
 export default function Home({list}) {
     const [searchText, setSearchText] = useState('');
@@ -29,6 +30,8 @@ export default function Home({list}) {
 
         <input type="text" value={searchText} onChange={e=>setSearchText(e.target.value)} />
         <button onClick={handleSearch}>Buscar</button>
+        <h1 /><Link href="/">Inicio</Link>
+        <h1 /><Link href="/sobre">Sobre mim</Link>
 
         <hr/>
         <ul>
