@@ -20,6 +20,7 @@ export default function MovieItem({info}) {
 
         <p>{info.overview}</p>
         <img src={`https://image.tmdb.org/t/p/original${info.backdrop_path}`} width="400" />
+        <h1 /><Link href="/">Inicio</Link>
       </main>
     </div>
   )
