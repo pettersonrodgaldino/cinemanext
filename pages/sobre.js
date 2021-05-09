@@ -12,17 +12,17 @@ export default function Home({author}) {
       </Head>
 
       <main className={styles.main}>
+        <div className={styles.menu}>
+          <Link href="/">Início</Link>
+          <Link href="/busca">Busca</Link>
+        </div>
         <h1 className={styles.title}>
-          Sobre o sistema
+          Sobre
         </h1>
-
-        O sistema foi feito em live para demonstrar os primeiros passos com o framewok Next.js
-        <hr />
-        Autor: {author}
-
-        <Link href="/busca">Ir para a Busca</Link>
-
-
+        Projeto realizado com o framework Next.js sendo uma parte do segundo exercicio sobre Server-side rendering da disciplina de Arquitetura de Front Ends do curso de
+        Pós graduação em Engenharia de Software.
+        <h3> Professor: Samuel Martins</h3>
+        <h3> Autores: {author}</h3>
       </main>
     </div>
   )
@@ -32,7 +32,7 @@ export async function getStaticProps(){
   
   return {
     props:{
-      author: 'Petterson Galdino'
+      author: 'Petterson Galdino e Rafael Albuquerque Basto da Costa'
     }
   };
 }

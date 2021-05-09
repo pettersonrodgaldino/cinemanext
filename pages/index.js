@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from'next/link'
 import styles from '../styles/Home.module.css'
+import MovieCard from '../src/components/movieCard'
 
 export default function Home({list}) {
   return (
@@ -12,25 +13,18 @@ export default function Home({list}) {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Filmes em Destaque
+        <h1>
+          Destaques
         </h1>
-
-        <Link href="/busca">Ir para a Busca</Link>
-
+        <div className={styles.menu}>
+          <Link href="/busca">Busca</Link>
+          <Link href="/sobre">Sobre</Link>
+        </div>
         <ul>
           {list.map(item=>(
-            <li>
-              <a href={`/movie/${item.id}`}>
-                <img src={`https://image.tmdb.org/t/p/original${item.poster_path}`} width="150"/> <br/>
-                {item.title}
-              </a>
-            </li>
+            <MovieCard item={item}/>
           ))}
         </ul>
-
-        <Link href="/sobre">Sobre mim</Link>
-
       </main>
     </div>
   )
